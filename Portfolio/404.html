@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden; /* Hide the scrollbars */
+    background-image: url('error.jpg'); /* Replace 'your-image.jpg' with the URL of your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white; /* Set the text color to white */
+  }
+  
+  .webdings-border::before,
+  .webdings-border::after {
+    content: "l"; /* Use the Webdings character you prefer for the border */
+    font-family: "Webdings", sans-serif;
+    font-size: 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .webdings-border::before {
+    left: 0;
+  }
+
+  .webdings-border::after {
+    right: 0;
+  }
+
+  .move-up {
+    transition: transform 0.5s;
+  }
+
+  .move-up:hover {
+    transform: translateY(-3em);
+  }
+  .error-message {
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  #hover-message {
+    position: absolute;
+    display: none;
+    z-index: 999;
+
+    text-align: center; /* Center text horizontally */
+    white-space: nowrap; /* Display the text in one line */
+  }
+
+  .container {
+    position: relative;
+  }
+</style>
+</head>
+<body>
+<div class="webdings-border" > </div>
+  <pre>
+               uuuuuuuuu
+            uu$$$$$$$$$$$uu
+         uu$$$$$$$$$$$$$$$$$uu
+        u$$$$$$$$$$$$$$$$$$$$$u
+       u$$$$$$$$$$$$$$$$$$$$$$$u
+      u$$$$$$$$$$$$$$$$$$$$$$$$$u
+      u$$$$$$$$$$$$$$$$$$$$$$$$$u
+      u$$$$$$"   "$$$"   "$$$$$$u
+      "$$$$"      u$u       $$$$"
+       $$$u       u$u       u$$$
+       $$$u      u$$$u      u$$$
+        "$$$$uu$$$   $$$uu$$$$"
+         "$$$$$$$"   "$$$$$$$"
+           u$$$$$$$u$$$$$$$u         	
+  </pre>
+  <div class="container">
+    <div class="move-up" onmouseover="moveUp(this);" onmouseout="moveDown(this);">
+	<pre>
+              u$"$"$"$"$"$"$u
+   uuu        $$u$ $ $ $ $u$$       uuu
+  u$$$$        $$$$$u$u$u$$$       u$$$$
+   $$$$$uu      "$$$$$$$$$"     uu$$$$$$
+ u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$
+ $$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
+  """      ""$$$$$$$$$$$uu ""$"""
+            uuuu ""$$$$$$$$$$uuu
+   u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$
+   $$$$$$$$$$""""           ""$$$$$$$$$$$"
+    "$$$$$"                      ""$$$$""
+      $$$"                         $$$$"    
+	</pre>
+	</div>
+  </div>
+  <div class="error-message">
+    ERROR 404: Oops! Page does not exist.
+	<a href="https://example.com">Back</a> <br>
+    <span style="font-size: 36px;"> Welcome to Hades!!</span>
+  </div>
+  <script>
+    function moveUp(element) {
+      element.style.transform = 'translateY(-3em)';
+    }
+
+    function moveDown(element) {
+      element.style.transform = 'translateY(0)';
+    }
+  </script>
+</body>
+</html>
